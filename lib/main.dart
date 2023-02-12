@@ -4,6 +4,9 @@ void main() {
   runApp(const MyApp());
 }
 
+int a = 3;
+String aa = "AA";
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
