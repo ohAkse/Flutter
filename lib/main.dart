@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'layout.dart';
 
 void main() {
   runApp(const MyApp());
 }
-
-int a = 3;
-String aa = "AA";
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -13,8 +12,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
     return MaterialApp(
-      title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -27,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.red,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const Layout(),
     );
   }
 }
@@ -52,7 +51,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 30;
-  String aa = "AAA";
 
   void _incrementCounter() {
     setState(() {
@@ -77,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(aa),
+        title: const Text('Welcome'),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
